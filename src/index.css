@@ -5,8 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html,
 body {
-  height: 100vh;
+  height: 100%;
   background-color: rgb(30, 30, 32);
   font-family: 'Open Sans', sans-serif;
 }
@@ -14,13 +15,24 @@ body {
 /*Utility classes */
 .container {
   max-width: 1170px;
-  margin: 100px auto 50px auto;
+  margin: 0 auto;
   padding: 0 16px;
 }
+
 .notFound_title {
   font-size: 45px;
   color: #dfdfd8;
   margin-bottom: 20px;
+}
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 /*Header classes */
@@ -33,23 +45,43 @@ body {
   align-items: center;
   position: fixed;
   top: 0;
+  z-index: 11111111;
+}
+@media (max-width: 992px) {
+  .header {
+    padding: 60px 0;
+  }
 }
 
 /*Nav classes */
 .nav {
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 10px 50px;
 }
+
+@media (max-width: 992px) {
+  .nav {
+    flex-direction: column-reverse;
+  }
+}
+
 .nav_links {
-  width: 100%;
   display: flex;
+  width: 100%;
+  flex: 1 1 auto;
+  justify-content: flex-end;
   align-items: center;
   justify-content: space-evenly;
 }
+@media (max-width: 992px) {
+  .nav_links {
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+}
+
 .nav_link {
+  font-size: 1.5rem;
   color: rgb(223, 224, 216);
   list-style: none;
   text-decoration: none;
@@ -80,6 +112,8 @@ body {
   border: 1px solid rgb(22, 22, 24);
   color: rgb(150, 150, 156);
   outline: none;
+  font-family: inherit;
+  font-size: inherit;
 }
 .input:where(:hover, :focus-visible) {
   border: 1px solid rgb(99, 109, 255);
@@ -88,9 +122,13 @@ body {
 
 /*Search input classes */
 .search_input {
-  width: 500px;
-  margin: 0 150px;
+  flex: 0 0 500px;
   padding: 12px 15px;
+}
+@media (max-width: 992px) {
+  .search_input {
+    flex: 1 1 auto;
+  }
 }
 .search_input::placeholder {
   color: rgb(150, 150, 156);
@@ -109,8 +147,11 @@ body {
 .main {
   width: 100%;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   align-items: center;
+  margin-top: 150px;
+  margin-bottom: 100px;
 }
 .main_title {
   color: #dfdfd8;

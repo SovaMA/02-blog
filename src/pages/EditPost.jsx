@@ -1,8 +1,8 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { setEditBody, setEditTitle } from '../features/inputs/inputsSlice';
-import { fetchEditPost } from '../features/posts/postSlice';
+import { setEditBody, setEditTitle } from '../redux/slices/inputs/inputsSlice';
+import { fetchEditPost } from '../redux/slices/posts/postSlice';
 
 export default function EditPost({ posts }) {
   const navigate = useNavigate();

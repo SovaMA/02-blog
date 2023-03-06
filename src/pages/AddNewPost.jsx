@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setNewBody, setNewTitle } from '../features/inputs/inputsSlice';
+import { setNewBody, setNewTitle } from '../redux/slices/inputs/inputsSlice';
 import { useNavigate } from 'react-router-dom';
-import { fetchAddPost } from '../features/posts/postSlice';
+import { fetchAddPost } from '../redux/slices/posts/postSlice';
 
 export default function AddNewPost() {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export default function AddNewPost() {
     dispatch(setNewBody(''));
     navigate('/');
   };
-  
+
   return (
     <main className='main container'>
       <h2 className='main_title'>New Post</h2>

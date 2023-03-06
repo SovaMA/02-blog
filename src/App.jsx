@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchPosts } from './features/posts/postSlice';
+import { fetchPosts } from './redux/slices/posts/postSlice';
 import { useEffect } from 'react';
 import Layout from './components/Layout';
 import About from './pages/About';

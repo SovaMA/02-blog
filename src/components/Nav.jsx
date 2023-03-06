@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setSearchInput } from '../features/inputs/inputsSlice';
+import { setSearchInput } from '../redux/slices/inputs/inputsSlice';
 
 export default function Nav() {
   const dispatch = useDispatch();
   const searchInput = useSelector((state) => state.inputs.search);
   return (
-    <nav className='nav'>
+    <nav className='nav container'>
       <input
         className='search_input input'
         type='text'

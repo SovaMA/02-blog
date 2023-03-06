@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import inputsSlice from '../features/inputs/inputsSlice';
-import postSlice from '../features/posts/postSlice';
+import inputsSlice from './slices/inputs/inputsSlice';
+import postSlice from './slices/posts/postSlice';
 
 export const store = configureStore({
   reducer: {

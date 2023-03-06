@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { fetchDeletePost } from '../features/posts/postSlice';
+import { fetchDeletePost } from '../redux/slices/posts/postSlice';
 
 export default function SinglePost({ posts }) {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ export default function SinglePost({ posts }) {
   const { id } = useParams();
 
   const post = posts.find((post) => post.id.toString() === id);
-  
+
   const deletePostHandler = (id) => {
     dispatch(fetchDeletePost(id));
     navigate('/');
